@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<!-- Student Name:   -->
+<html lang="en">
+  <head>
+    <title>Web Mashup: Display Best Restaurants on a Map</title>
+    <meta charset="utf-8"/>
+    <script type="text/javascript" src="yelp.js"></script>
+    <style>
+        html, body{
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      #panel {
+        position: absolute;
+        top: 5px;
+        left: 40%;
+        margin-left: -180px;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+      }
+#content {   
+overflow:auto;
+width: 100%;
+border: 1px solid black; 
+}
+
+#output, #map-canvas {
+  width: 40%; 
+}
+
+#output {   
+  float:left; 
+}
+#map-canvas {float:right; 
+}
+.boxer {
+   display: table;
+   border-collapse: collapse;
+}
+ 
+.boxer .box-row {
+   display: table-row;
+}
+
+.boxer .box {
+   display: table-cell;
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid black;
+}
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+     </head>
+  <body onload="initialize();">
+    <font></font> 
+       <label>Search Terms: <input type="text" id="search"/></label>
+       <input type="button" onclick="sendRequest();" value="Find"/>
+       <!--<input id="address" type="textbox" value="532 Fielder North Plz,Eastside,Arlington, TX 76012">-->
+    </form>
+    
+
+      <div id="content">
+        <div id="output" style="height: 500px; width: 400px;">
+        </div>
+        <div id="map-canvas" style="height: 500px; width: 600px;"></div>
+        </div>
+</div>
+  </body>
+</html>
